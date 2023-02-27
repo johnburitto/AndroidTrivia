@@ -101,11 +101,15 @@ class GameFragment : Fragment() {
                         binding.invalidateAll()
                     }
                     else {
-                        view.findNavController().navigate(R.id.action_gameFragment_to_gameWonFragment)
+                        val state = "We've won!"
+
+                        view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(numQuestions, questionIndex))
                     }
                 }
                 else {
-                    view.findNavController().navigate(R.id.action_gameFragment_to_gameOverFragment)
+                    val state = "Game over!"
+
+                    view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment())
                 }
             }
         }
